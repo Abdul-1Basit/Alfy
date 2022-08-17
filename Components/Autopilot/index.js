@@ -8,7 +8,7 @@ import Youtube from "../../Content/Images/youtube.png";
 import leftArrow from "../../Content/Images/left.png";
 import rightArrow from "../../Content/Images/right.png";
 import { primaryColor, secondaryColor } from "../Constants";
-import tank from "../../Content/Images/tank.png";
+import tank from "../../Content/Images/Tank.png";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import woody from "../../Content/Images/woody.png";
