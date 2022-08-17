@@ -332,11 +332,11 @@ export function Footer() {
 					flex-row
 										"
 					>
-						<Image src={Fb} /> &nbsp;
-						<Image src={Insta} /> &nbsp;
-						<Image src={LinkedIn} /> &nbsp;
-						<Image src={Twitter} /> &nbsp;
-						<Image src={Youtube} />
+						<Image src={Fb} alt="fb" /> &nbsp;
+						<Image src={Insta} alt="insta" /> &nbsp;
+						<Image src={LinkedIn} alt="linkedin" /> &nbsp;
+						<Image src={Twitter} alt="twitter" /> &nbsp;
+						<Image src={Youtube} alt="youtube" />
 					</div>
 					<div
 						style={{
@@ -1157,9 +1157,11 @@ export function Bootcamp() {
 				>
 					<Image
 						src={leftArrow} //style={{ objectFit: "cover" }}
+						alt="left arrow"
 					/>
 					<Image
-						src={rightArrow} //style={{ objectFit: "cover" }}
+						src={rightArrow}
+						alt={"right arrow"} //style={{ objectFit: "cover" }}
 					/>
 				</div>
 			</div>
@@ -1419,7 +1421,9 @@ export function Steps() {
 							key={index}
 						>
 							<Image
-								src={item.icon} //style={{ objectFit: "cover" }}
+								src={item.icon}
+								alt="items icon"
+								//style={{ objectFit: "cover" }}
 							/>
 							<span
 								style={{
