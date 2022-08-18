@@ -3,6 +3,10 @@ module.exports = {
 		"./pages/**/*.{js,ts,jsx,tsx}",
 		"./components/**/*.{js,ts,jsx,tsx}",
 	],
+	purge: [
+		"./src/**/*.{js,ts,jsx,tsx}",
+		// Add more here
+	],
 	theme: {
 		screens: {
 			xs: "375px",
