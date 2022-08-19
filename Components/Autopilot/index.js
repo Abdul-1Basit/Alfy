@@ -7,12 +7,12 @@ import Twitter from "../../Content/Images/Twitter.png";
 import Youtube from "../../Content/Images/youtube.png";
 import leftArrow from "../../Content/Images/left.png";
 import rightArrow from "../../Content/Images/right.png";
-import { primaryColor, secondaryColor } from "../Constants";
+import { secondaryColor } from "../Constants";
 import tank from "../../Content/Images/Tank.png";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "animate.css";
+
 import "react-tabs/style/react-tabs.css";
-import woody from "../../Content/Images/woody.png";
-import ReactPlayer from "react-player";
+//import ReactPlayer from "react-player";
 import React from "react";
 const tempLink =
 	"https://www.youtube.com/watch?v=AFtUpMTs4vI&t=9s&ab_channel=BMWCanada";
@@ -28,7 +28,7 @@ export default function AutoPilot() {
 		<div className="w-full flex items-center flex-col justify-center">
 			<div className="flex items-center flex-col justify-center pt-40 w-full">
 				<p
-					className="font-normal text-center max-w-5xl w-full
+					className="font-normal text-center max-w-5xl w-full animate__animated animate__fadeInUp
 					lg:text-8xl
 					md:text-8xl
 					xs:text-[32px]
@@ -42,7 +42,7 @@ export default function AutoPilot() {
 					Online learning is Borken. And We Just fixed it.
 				</p>
 				<p
-					className="text-center pb-14 font-normal	
+					className="text-center pb-14 font-normal pt-2 animate__animated animate__fadeInUp
 					lg:text-[22px]
 					lg:px-[412px]
 					md:text-[22px]
@@ -70,10 +70,11 @@ export default function AutoPilot() {
 						backgroundColor: "#CEFFE5",
 						color: "#004737",
 						textAlign: "center",
-						font: 12.7,
-						height: 34,
-						width: "100%",
-						maxWidth: 199,
+						fontSize: 14.7,
+						paddingTop: 10,
+						paddingBottom: 10,
+						paddingRight: 40,
+						paddingLeft: 40,
 						borderRadius: 100,
 						border: 0,
 						marginRight: 13,
@@ -107,7 +108,7 @@ export function AnimatedTabs() {
 			<div className="flex flex-col items-center max-w-full justify-center pt-28">
 				<div className="flex flex-row items-center justify-between  	">
 					<span
-						className="text-lg font-medium not-italic text-center pb-5	"
+						className="transition delay-150 duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 hover:text-[#004737] text-lg font-medium not-italic text-center pb-5	"
 						style={{
 							fontFamily: "Helvetica Neue",
 							color: active === 0 ? "#004737" : "rgba(0, 71, 45, 0.5)",
@@ -122,7 +123,7 @@ export function AnimatedTabs() {
 						Bootcamp
 					</span>
 					<span
-						className="text-lg font-medium not-italic text-center pb-5	"
+						className="transition delay-150 duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 hover:text-[#004737]  text-lg font-medium not-italic text-center pb-5	"
 						style={{
 							fontFamily: "Helvetica Neue",
 							color: active === 1 ? "#004737" : "rgba(0, 71, 45, 0.5)",
@@ -231,21 +232,15 @@ export function Footer() {
 					</div>
 					<div></div>
 
-					<div
-						style={{
-							display: "flex",
-							alignItems: "center",
-							flexDirection: "row",
-						}}
-					>
+					<div className="flex items-center flex-row">
 						<button
 							style={{
 								// fontSize: 14,
-								fontWeight: "bold",
+								fontWeight: "700",
 								backgroundColor: "#CEFFE5",
 								color: "#004737",
 								textAlign: "center",
-								font: 12.7,
+								fontSize: 12.7,
 								height: 34,
 								minWidth: 135,
 								borderRadius: 100,
@@ -262,7 +257,7 @@ export function Footer() {
 								backgroundColor: "#4CEE95",
 								color: "#004737",
 								textAlign: "center",
-								font: 12.7,
+								fontSize: 12.7,
 								height: 34,
 								minWidth: 75,
 								borderRadius: 100,
@@ -988,14 +983,14 @@ export function Faq() {
 export function Bootcamp() {
 	return (
 		<div
-			className="flex items-center justify-between px-48 pt-40 
+			className="flex items-center justify-between px-48 pt-40 pb-36
 			lg:flex-row
 			sm:flex-col-reverse
 			xs:flex-col-reverse
 			"
 		>
 			<div
-				className="flex items-center justify-between 
+				className="flex items-center justify-between animate__animated animate__fadeInRight
 				lg:flex-col
 				sm:flex-row
 				xs:flex-row
@@ -1009,6 +1004,7 @@ export function Bootcamp() {
 					className="flex items-center justify-center max-w-full pb-48 lg:flex-row
 		sm:flex-col-reverse
 		xs:flex-col-reverse
+		animate__fadeInRight
 		"
 				>
 					<div
@@ -1038,8 +1034,8 @@ export function Bootcamp() {
 						</span>
 					</div>
 					<div
-						className="w-full	
-						lg:w-max-[112px]
+						className="w-full
+						lg:max-w-[112px]
 						lg:h-6
 						
 						sm:h-8
@@ -1055,7 +1051,8 @@ export function Bootcamp() {
 				<div
 					className="flex items-center justify-center max-w-full lg:flex-row
 		sm:flex-col-reverse
-		xs:flex-col-reverse"
+		xs:flex-col-reverse
+		animate__fadeInRight"
 				>
 					<div
 						style={{
@@ -1084,7 +1081,7 @@ export function Bootcamp() {
 					</div>
 					<div
 						className="w-full	
-						lg:w-max-[112px]
+						lg:max-w-[112px]
 						lg:h-6
 						
 						sm:h-12
@@ -1099,7 +1096,7 @@ export function Bootcamp() {
 				</div>
 			</div>
 			<div
-				className="w-full flex flex-col justify-between items-center 
+				className="w-full flex flex-col items-center animate__animated animate__fadeInDown
 				lg:px-[42px]
 				lg:pt-[131px]
 				lg:h-[832px]
@@ -1124,8 +1121,12 @@ export function Bootcamp() {
 			>
 				<p
 					className="font-normal text-center 
+					xl:text-[22px]
+					xl:pb-[81px]
 					lg:text-[22px]
+lg:pb-[81px]
 					md:text-[22px]
+					md:pb-[81px]
 					sm:text-base
 					xs:text-base
 					"
@@ -1140,7 +1141,9 @@ export function Bootcamp() {
 					accomplish a specific task or goal.
 				</p>
 				<span
-					className="
+					className="	xl:flex
+					lg:flex
+					md:flex
 				xs:hidden
 				sm:hidden
 				"
@@ -1150,7 +1153,10 @@ export function Bootcamp() {
 				</span>
 				<div
 					className="
-					flex items-center justify-between w-full first-letter max-w-[100px]
+					items-center justify-between w-full first-letter max-w-[90px]
+					xl:flex
+					lg:flex
+					md:flex
 					xs:hidden
 					sm:hidden
 					"
@@ -1166,11 +1172,12 @@ export function Bootcamp() {
 				</div>
 			</div>
 			<div
-				className="items-center justify-center
+				className="items-center justify-center animate__animated animate__fadeInLeft
 			xs:hidden
 			sm:hidden
 			lg:flex
 			md:flex
+			animate__fadeInLeft
 			"
 			>
 				<div
@@ -1217,6 +1224,7 @@ export function Existance() {
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "center",
+				width: "100%",
 			}}
 		>
 			<div
@@ -1226,8 +1234,8 @@ export function Existance() {
 				xs:flex-col  
 				xs:max-w-sm 
 				md:max-w-7xl 
-				xl:max-w-7xl 
-				lg:max-w-7xl
+				xl:max-w-[1350px] 
+				lg:max-w-full
 				sm:items-center pl-10 pt-16 pb-6
 				sm:justify-evenly
 				xs:items-center xs:justify-between
@@ -1358,9 +1366,9 @@ export function Steps() {
 			<p
 				className="not-italic text-center
 				lg:text-6xl
-				lg:py-96
+				lg:py-9
 				md:text-6xl
-				md:py-96
+				md:py-9
 				xs:text-[32px]
 				xs:py-3
 				sm:text-[32px]
@@ -1537,15 +1545,17 @@ export function About() {
 					<div
 						className="
 						flex flex-col 
-						lg: items-center
+						xl:items-center
+						xl:justify-center
+						xl:pb-[149px]
+						lg:items-center
 						lg:justify-center
 						lg:w-[560px]
 						lg:h-[391px] 
 						lg:pt-[106px]
-						lg:pb[149px]
+						lg:pb-[149px]
 						lg:px-[138px]
 						xs:items-start
-						
 						xs:justify-start
 						xs:w-[258px]
 						xs:h-[191px] 
@@ -1561,6 +1571,7 @@ export function About() {
 					>
 						<span
 							className="not-italic font-bold flex items-center
+							xl:items-center
 							lg:text-6xl
 							lg:items-center
 							md:text-6xl
@@ -1598,12 +1609,16 @@ export function About() {
 					<div
 						className="
 						flex flex-col 
+						xl:items-center
+						xl:justify-center
+						xl:pb-[149px]
+
 						lg: items-center
 						lg:justify-center
 						lg:w-[560px]
 						lg:h-[391px] 
 						lg:pt-[106px]
-						lg:pb[149px]
+						lg:pb-[149px]
 						lg:px-[138px]
 						xs:items-start
 						
@@ -1842,144 +1857,284 @@ export function LandJob() {
 					Land a job.
 				</span>
 			</div>
+
 			<div
-				className="flex item-center justify-between
+				className="flex item-center justify-between w-full px-3
+				xl:flex-row
 				lg:flex-row
 				sm:flex-col
 				xs:flex-col
 				"
 			>
-				<div className="flex item-center justify-between flex-row">
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
-						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
-						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-				</div>
-				<div className="flex item-center justify-between flex-row">
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
-						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
-						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-				</div>
 				<div
-					className="
-				lg:flex
-				sm:hidden
-				xs:hidden
+					className="flex justify-between h-full
+				xl:flex-col
+				lg:flex-col
+				md:flex-col
+				sm:flex-row
+				xs:flex-row
 				"
 				>
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
+					<video
+						className="flex w-full m-3
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
 						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-				</div>
-			</div>
-			<div
-				className="flex item-center justify-between
-				lg:flex-row
-				sm:flex-col
-				xs:flex-col
+						controls
+					></video>
+					<video
+						className="flex w-full m-3
+				xl:max-w-[295px]
+				xl:h-[404px]
+				lg:max-w-[295px]
+				lg:h-[404px]
+				md:max-w-[295px]
+				md:h-[404px]
+				sm:max-w-[184px]
+				sm:h-[251px]
+				xs:max-w-[184px]
+				xs:h-[251px]
 				"
-			>
-				<div className="flex item-center justify-between flex-row">
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
 						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
-						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-				</div>
-				<div className="flex item-center justify-between flex-row">
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
-						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
-						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
+						controls
+					></video>
 				</div>
 				<div
-					className="
-				lg:flex
-				sm:hidden
-				xs:hidden
+					className="flex justify-between h-full
+				xl:flex-col
+				lg:flex-col
+				md:flex-col
+				sm:flex-row
+				xs:flex-row
 				"
 				>
-					<ReactPlayer
-						url={
-							"https://www.youtube.com/watch?v=EngW7tLk6R8&ab_channel=WowRomantic"
+					<video
+						className="flex w-full m-3
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
 						}
-						className="w-full h-[404px] rounded-[20px] pb-2						
-						lg:max-w-[290px]
-						sm:max-w-[190px]
-						xs:max-w-[190px]
-						"
-					/>
+						controls
+					></video>
+					<video
+						className="flex w-full m-3
+				xl:max-w-[295px]
+				xl:h-[404px]
+				lg:max-w-[295px]
+				lg:h-[404px]
+				md:max-w-[295px]
+				md:h-[404px]
+				sm:max-w-[184px]
+				sm:h-[251px]
+				xs:max-w-[184px]
+				xs:h-[251px]
+				"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+						}
+						controls
+					></video>
+				</div>
+				<div
+					className="flex justify-between h-full
+				xl:flex-col
+				lg:flex-col
+				md:flex-col
+				sm:flex-row
+				xs:flex-row
+				"
+				>
+					<video
+						className="flex w-full m-3
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+						}
+						controls
+					></video>
+					<video
+						className="flex w-full m-3
+				xl:max-w-[295px]
+				xl:h-[404px]
+				lg:max-w-[295px]
+				lg:h-[404px]
+				md:max-w-[295px]
+				md:h-[404px]
+				sm:max-w-[184px]
+				sm:h-[251px]
+				xs:max-w-[184px]
+				xs:h-[251px]
+				"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+						}
+						controls
+					></video>
+				</div>
+				<div
+					className="flex justify-between h-full
+				xl:flex-col
+				lg:flex-col
+				md:flex-col
+				sm:flex-row
+				xs:flex-row
+				"
+				>
+					<video
+						className="flex w-full m-3
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+						}
+						controls
+					></video>
+					<video
+						className="flex w-full m-3
+				xl:max-w-[295px]
+				xl:h-[404px]
+				lg:max-w-[295px]
+				lg:h-[404px]
+				md:max-w-[295px]
+				md:h-[404px]
+				sm:max-w-[184px]
+				sm:h-[251px]
+				xs:max-w-[184px]
+				xs:h-[251px]
+				"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+						}
+						controls
+					></video>
+				</div>
+				<div
+					className="flex justify-between h-full
+				xl:flex-col
+				lg:flex-col
+				md:flex-col
+				sm:flex-row
+				xs:flex-row
+				"
+				>
+					<video
+						className="flex w-full m-3
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+						}
+						controls
+					></video>
+					<video
+						className="flex w-full m-3
+				xl:max-w-[295px]
+				xl:h-[404px]
+				lg:max-w-[295px]
+				lg:h-[404px]
+				md:max-w-[295px]
+				md:h-[404px]
+				sm:max-w-[184px]
+				sm:h-[251px]
+				xs:max-w-[184px]
+				xs:h-[251px]
+				"
+						style={{
+							objectFit: "cover",
+							borderRadius: 20,
+						}}
+						src={
+							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+						}
+						controls
+					></video>
 				</div>
 			</div>
 		</div>

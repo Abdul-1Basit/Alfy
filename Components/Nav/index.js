@@ -48,7 +48,7 @@ export default function Nav() {
 			<div className="sm:hidden xs:hidden md:flex lg:flex xl:flex">
 				{navOptions.map((item, index) => {
 					return (
-						<span
+						<button
 							key={index}
 							style={{
 								padding: 10,
@@ -56,10 +56,11 @@ export default function Nav() {
 								fontWeight: "bold",
 								lineHeight: "15.96px",
 								color: activeOption === index ? "#4CEE95" : "#004737",
+								backgroundColor: "transparent",
 							}}
 						>
 							{item.optionName}
-						</span>
+						</button>
 					);
 				})}
 			</div>
@@ -67,11 +68,11 @@ export default function Nav() {
 				<button
 					style={{
 						// fontSize: 14,
-						fontWeight: "bold",
+						fontWeight: "700",
 						backgroundColor: "#CEFFE5",
 						color: "#004737",
 						textAlign: "center",
-						font: 12.7,
+						fontSize: 12.7,
 						height: 34,
 						minWidth: 135,
 						borderRadius: 100,
@@ -88,7 +89,7 @@ export default function Nav() {
 						backgroundColor: "#4CEE95",
 						color: "#004737",
 						textAlign: "center",
-						font: 12.7,
+						fontSize: 12.7,
 						height: 34,
 						minWidth: 75,
 						borderRadius: 100,
@@ -98,6 +99,7 @@ export default function Nav() {
 					Login
 				</button>
 			</div>
+			<div className="sm:hidden xs:hidden md:flex lg:flex xl:flex"></div>
 			<div className="sm:flex xs:flex md:hidden lg:hidden xl:hidden flex p-5">
 				<AiOutlineMenu size={25} />
 			</div>
