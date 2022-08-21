@@ -8,7 +8,7 @@ import Youtube from "../../Content/Images/youtube.png";
 import leftArrow from "../../Content/Images/left.png";
 import rightArrow from "../../Content/Images/right.png";
 import { secondaryColor } from "../Constants";
-import tank from "../../Content/Images/Tank.png";
+import tank from "../../Content/Images/recharge.svg";
 import "animate.css";
 
 import "react-tabs/style/react-tabs.css";
@@ -25,12 +25,17 @@ const VideoStyles = {
 };
 export default function AutoPilot() {
 	return (
-		<div className="w-full flex items-center flex-col justify-center">
-			<div className="flex items-center flex-col justify-center pt-40 w-full">
-				<p
+		<div className="w-full flex items-center flex-col justify-center overflow-x-hidden	">
+			<div
+				className="flex items-center flex-col justify-center pt-40 w-full"
+				name="Home"
+				id="Home"
+			>
+				<span
 					className="font-normal text-center max-w-5xl w-full animate__animated animate__fadeInUp
-					lg:text-8xl
-					md:text-8xl
+					xl:text-[88px]
+					lg:text-[88px]
+					md:text-[88px]
 					xs:text-[32px]
 					sm:text-[32px]
 					"
@@ -39,12 +44,33 @@ export default function AutoPilot() {
 						color: "#004737",
 					}}
 				>
-					Online learning is Borken. And We Just fixed it.
-				</p>
+					Online learning is Borken.
+				</span>
+				<span
+					className="font-normal text-center max-w-5xl w-full animate__animated animate__fadeInUp
+					xl:text-[88px]
+					xl:mt-[-30px]
+					lg:text-[88px]
+					lg:mt-[-30px]
+					md:text-[88px]
+					md:mt-[-30px]
+					xs:text-[32px]
+					xs:mt-[-6px]
+					sm:text-[32px]
+					sm:mt-[-6px]
+					"
+					style={{
+						fontFamily: "Aeonik TRIAL",
+						color: "#004737",
+					}}
+				>
+					We Just fixed it.
+				</span>
 				<p
-					className="text-center pb-14 font-normal pt-2 animate__animated animate__fadeInUp
+					className="text-center pb-14 pt-2 animate__animated animate__fadeInUp
+					xl:text-[22px]
 					lg:text-[22px]
-					lg:px-[412px]
+					lg:px-[240px]
 					md:text-[22px]
 					md:px-[412px]
 					sm:text-sm
@@ -54,8 +80,10 @@ export default function AutoPilot() {
 					"
 					style={{
 						fontFamily: "Work Sans",
-						color: "#004737",
+						color: "rgba(0, 71, 55, 0.6)",
+						fontWeight: "400",
 						opacity: "60%",
+						lineHeight: "30px",
 					}}
 				>
 					We provide a bootcamp-style experience, boosting your accountability,
@@ -64,10 +92,11 @@ export default function AutoPilot() {
 					learning journey and land a job.
 				</p>
 				<button
+					className="transition ease-in-out delay-150 font-medium bg-[#CEFFE5] hover:-translate-y-1 hover:scale-110 hover:bg-[#4CEE95] hover:font-normal duration-300"
 					style={{
 						// fontSize: 14,
-						fontWeight: "bold",
-						backgroundColor: "#CEFFE5",
+						//	fontWeight: "bold",
+						//						backgroundColor: "#CEFFE5",
 						color: "#004737",
 						textAlign: "center",
 						fontSize: 14.7,
@@ -108,7 +137,7 @@ export function AnimatedTabs() {
 			<div className="flex flex-col items-center max-w-full justify-center pt-28">
 				<div className="flex flex-row items-center justify-between  	">
 					<span
-						className="transition delay-150 duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 hover:text-[#004737] text-lg font-medium not-italic text-center pb-5	"
+						className="text-lg font-medium not-italic text-center pb-5	"
 						style={{
 							fontFamily: "Helvetica Neue",
 							color: active === 0 ? "#004737" : "rgba(0, 71, 45, 0.5)",
@@ -123,7 +152,7 @@ export function AnimatedTabs() {
 						Bootcamp
 					</span>
 					<span
-						className="transition delay-150 duration-300 ease-in-out  hover:-translate-y-1 hover:scale-110 hover:text-[#004737]  text-lg font-medium not-italic text-center pb-5	"
+						className="text-lg font-medium not-italic text-center pb-5	"
 						style={{
 							fontFamily: "Helvetica Neue",
 							color: active === 1 ? "#004737" : "rgba(0, 71, 45, 0.5)",
@@ -138,9 +167,226 @@ export function AnimatedTabs() {
 						Learning path
 					</span>
 				</div>
-				{active === 0 && <Bootcamp />}
+				<div id="Bootcamps" name="Bootcamps">
+					{active === 0 && <Bootcamp />}
 
-				{active === 1 && <Bootcamp />}
+					{active === 1 && <LearningPath />}
+				</div>
+			</div>
+		</div>
+	);
+}
+export function LearningPath() {
+	const courseList = [
+		"React",
+		"Angular",
+		"Firebase",
+		"Figma",
+		"Vue.js",
+		"Remix",
+	];
+	const [activeCourse, SetActiveCourse] = React.useState(0);
+	return (
+		<div
+			className="w-full flex items-center justify-between pt-[121px]
+			pb-[250px]
+			xl:flex-row
+			lg:flex-row
+			md:flex-row
+			sm:flex-col
+			xs:flex-col
+			xl:pr-[70px]
+			xl:pl-[80px]
+			lg:pr-[70px]
+			lg:pl-[80px]
+			md:pr-[70px]
+			md:pl-[80px]
+			sm:pr-[20px]
+			sm:pl-[20px]
+			xs:pr-[20px]
+			xs:pl-[20px]
+	
+			"
+		>
+			<div className="w-full flex items-center justify-start flex-col">
+				{courseList.map((item, index) => {
+					return (
+						<div
+							key={index}
+							className="flex w-full max-w-[420.82px] h-[106.38px] rounded-[9.41429px] py-[35px] pl-[74px]"
+							style={{
+								backgroundColor:
+									activeCourse === index ? "#041D18" : "transparent",
+								cursor: "pointer",
+							}}
+							onClick={() => {
+								SetActiveCourse(index);
+							}}
+						>
+							<span
+								style={{
+									fontFamily: "Helvetica Neue",
+									fontStyle: "normal",
+									fontWeight: "700",
+									fontSize: "28.2429px",
+									lineHeight: "34px",
+									display: "flex",
+									alignItems: "center",
+									textAlign: "center",
+									color: activeCourse === index ? "#CEFFE5" : "#000000",
+								}}
+							>
+								{item}
+							</span>
+						</div>
+					);
+				})}
+			</div>
+			<div className="flex flex-col py-4">
+				<p
+					style={{
+						fontFamily: "Helvetica Neue",
+						fontStyle: "normal",
+						fontWeight: "700",
+						fontSize: "28.2429px",
+						lineHeight: "34px",
+						display: "flex",
+						alignItems: "center",
+						textAlign: "center",
+						color: "#004737",
+					}}
+				>
+					Prerequsie
+				</p>
+				<p
+					className="text-left py-4
+					xl:text-[22px]
+					lg:text-[22px]
+					md:text-[22px]
+					sm:text-sm
+					xs:text-sm
+					"
+					style={{
+						fontFamily: "Work Sans",
+						color: "rgba(0, 71, 55, 0.6)",
+						fontWeight: "400",
+						opacity: "60%",
+						lineHeight: "30px",
+					}}
+				>
+					We provide a bootcamp-style experience, boosting your accountability,
+					helping you through each step of your learning journey, and filtering
+					the most relevant content for you. All of that so you will finish your
+					learning journey and land a job.
+				</p>
+				<p
+					style={{
+						fontFamily: "Helvetica Neue",
+						fontStyle: "normal",
+						fontWeight: "700",
+						fontSize: "28.2429px",
+						lineHeight: "34px",
+						display: "flex",
+						alignItems: "center",
+						textAlign: "center",
+						color: "#004737",
+					}}
+				>
+					You will learn
+				</p>
+				<p
+					className="text-left py-4
+					xl:text-[22px]
+					lg:text-[22px]
+					md:text-[22px]
+					sm:text-sm
+					xs:text-sm
+					"
+					style={{
+						fontFamily: "Work Sans",
+						color: "rgba(0, 71, 55, 0.6)",
+						fontWeight: "400",
+						opacity: "60%",
+						lineHeight: "30px",
+					}}
+				>
+					We provide a bootcamp-style experience, boosting your accountability,
+					helping you through each step of your learning journey, and filtering
+					the most relevant content for you. All of that so you will finish your
+					learning journey and land a job.
+				</p>
+				<p
+					style={{
+						fontFamily: "Helvetica Neue",
+						fontStyle: "normal",
+						fontWeight: "700",
+						fontSize: "28.2429px",
+						lineHeight: "34px",
+						display: "flex",
+						alignItems: "center",
+						textAlign: "center",
+						color: "#004737",
+					}}
+				>
+					You will gain{" "}
+				</p>
+				<p
+					className="text-left py-4
+					xl:text-[22px]
+					lg:text-[22px]
+					md:text-[22px]
+					sm:text-sm
+					xs:text-sm
+					"
+					style={{
+						fontFamily: "Work Sans",
+						color: "rgba(0, 71, 55, 0.6)",
+						fontWeight: "400",
+						opacity: "60%",
+						lineHeight: "30px",
+					}}
+				>
+					We provide a bootcamp-style experience, boosting your accountability,
+					helping you through each step of your learning journey, and filtering
+					the most relevant content for you. All of that so you will finish your
+					learning journey and land a job.
+				</p>
+				<p
+					style={{
+						fontFamily: "Helvetica Neue",
+						fontStyle: "normal",
+						fontWeight: "700",
+						fontSize: "28.2429px",
+						lineHeight: "34px",
+						display: "flex",
+						alignItems: "center",
+						textAlign: "center",
+						color: "#004737",
+					}}
+				>
+					You will be able to
+				</p>
+				<p
+					className="text-left py-4
+					xl:text-[22px]
+					lg:text-[22px]
+					md:text-[22px]
+					sm:text-sm
+					xs:text-sm
+					"
+					style={{
+						fontFamily: "Work Sans",
+						color: "rgba(0, 71, 55, 0.6)",
+						fontWeight: "400",
+						opacity: "60%",
+						lineHeight: "30px",
+					}}
+				>
+					We provide a bootcamp-style experience, boosting your accountability,
+					helping you through each step of your learning journey, and filtering
+					the most relevant content for you. All of that so you will finish your
+					learning journey and land a job.
+				</p>
 			</div>
 		</div>
 	);
@@ -396,7 +642,7 @@ export function Footer() {
 }
 export function Faq() {
 	return (
-		<div>
+		<div id="FAQ">
 			<div
 				style={{
 					display: "flex",
@@ -445,7 +691,7 @@ export function Faq() {
 					We got the answer!
 				</span>
 			</div>
-			<div className="w-full" style={{ paddingRight: 216, paddingLeft: 238 }}>
+			<div className="w-full">
 				<div
 					className="flex items-center justify-between w-full pt-[42px]
 					lg:flex-row
@@ -455,7 +701,7 @@ export function Faq() {
 					"
 				>
 					<div
-						className="w-full 
+						className="w-full h-full
 						lg:h-[484px]
 						lg:max-w-[517px]
 						lg:pl-[56px]
@@ -483,7 +729,6 @@ export function Faq() {
 						"
 						style={{
 							borderRadius: "20px",
-
 							border: "1px solid #000000",
 						}}
 					>
@@ -541,6 +786,7 @@ export function Faq() {
 											sm:pr-[22px]
 											sm:pb-[61px]
 											sm:mt-3
+											sm:mb-3
 											xs:max-w-[250px]
 											xs:h-[258px]
 											xs:pl-[22px]
@@ -548,6 +794,8 @@ export function Faq() {
 											xs:pr-[22px]
 											xs:pb-[61px]
 											xs:mt-3
+											xs:mb-3
+
 											"
 						style={{
 							borderRadius: "20px",
@@ -591,7 +839,7 @@ export function Faq() {
 				</div>
 
 				<div
-					className="flex items-center justify-between w-full h-full pt-3
+					className="flex items-center justify-between w-full h-full
 					lg:flex-row
 					md:flex-row
 					sm:flex-col
@@ -599,38 +847,39 @@ export function Faq() {
 					"
 				>
 					<div
-						style={{
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "space-between",
-							flexDirection: "column",
-							width: "100%",
-							//height: "100%",
-						}}
+						className="w-full flex items-center justify-between flex-col
+						lg:max-w-[369px]
+						xl:max-w-[369px]
+						md:max-w-full
+						sm:max-w-full
+						xs:max-w-full
+						"
 					>
 						<div
+							className="flex items-center justify-between flex-row w-full
+							xl:pb-5
+							lg:pb-5
+							md:pb-5
+							xs:pb-[9px]
+							sm:pb-[9px]"
 							style={{
 								display: "flex",
 								alignItems: "center",
 								justifyContent: "space-between",
 								flexDirection: "row",
 								width: "100%",
-								paddingBottom: 20,
 							}}
 						>
 							<div
 								className="w-full rounded-[20px]
 								lg:h-[118px]
-								lg:max-w-[117px]
-								lg:px-5
+								lg:max-w-[177px]
 								lg:pt-[10px]
-								md:px-5
 								md:h-[118px]
-								md:max-w-[117px]
+								md:max-w-[177px]
 								md:pt-[10px]
 								sm:px-[14px]
 								sm:pt-[14px]
-								
 								sm:h-[82px]
 								sm:max-w-[123px]
 								xs:pt-[14px]
@@ -676,12 +925,10 @@ export function Faq() {
 							<div
 								className="w-full rounded-[20px]
 								lg:h-[118px]
-								lg:max-w-[117px]
-								lg:px-5
+								lg:max-w-[177px]
 								lg:pt-[10px]
-								md:px-5
 								md:h-[118px]
-								md:max-w-[117px]
+								md:max-w-[177px]
 								md:pt-[10px]
 								sm:px-[14px]
 								sm:pt-[14px]
@@ -791,41 +1038,56 @@ export function Faq() {
 
 					<div
 						className="flex items-center justify-between flex-row w-full
-						sm:mt-[18px]
-						xs:mt-[18px]
+						lg:mt-0
+						xl:mt-0
+						md:mt-0
+						xs:mt-[8px]
+
+						sm:mt-[8px]
+
 					"
 					>
 						<div
-							className="w-full
-							lg:w-[530px]
+							className="lg:w-[364px] w-full
+							xl:h-[362px]
+							xl:mx-[13px]
+							xl:pl-6
+							xl:pt-6
+							xl:pr-8
+							xl:rounded-[20px]
 							lg:h-[362px]
-							lg:ml-6
+							lg:mx-[13px]
 							lg:pl-6
 							lg:pt-6
 							lg:pr-8
+							lg:rounded-[20px]
 							md:w-[530px]
 							md:h-[362px]
-							md:ml-6
 							md:pl-6
 							md:pt-6
 							md:pr-8
+							md:mx-[13px]
+							md:rounded-[20px]
 							sm:w-[145px]
 							sm:h-[150px]
-							sm:ml-0
+							sm:mr-[5px]
 							sm:pl-2
 							sm:pt-3
 							sm:pr-[12px]
+							sm:rounded-[14px]
+
 							xs:w-[145px]
 							xs:h-[150px]
 							xs:ml-0
 							xs:pl-2
 							xs:pt-3
 							xs:pr-[12px]
-							
+							xs:mr-[5px]
+							xs:rounded-[14px]
+
 							"
 							style={{
 								border: "1px solid #000000",
-								borderRadius: "20px",
 							}}
 						>
 							<p
@@ -859,34 +1121,40 @@ export function Faq() {
 						</div>
 
 						<div
-							className="flex items-center justify-between flex-col w-full h-full
-					
+							className="flex items-center justify-between flex-col
+							lg:h-[362px]
+							xl:h-[362px]
+							md:h-[362px]
+							sm:h-[139.07px]
+							xs:h-[139.07px]
 						"
 						>
 							<div
-								className="w-full rounded-[20px]
+								className="
 								lg:max-w-[296px]
 								lg:h-[152px]
 								lg:mb-[21px]
 								lg:px-[21px]
 								lg:pt-3
+								lg:rounded-[20px]
 								md:max-w-[296px]
 								md:h-[152px]
 								md:mb-[21px]
 								md:px-[21px]
 								md:pt-3
+								md:rounded-[20px]
 								sm:max-w-[115px]
-								sm:h-[58px]
+								sm:h-[58.39px]
 								sm:mb-[8px]
 								sm:px-[10px]
 								sm:pt-2
+								sm:rounded-[7.68335px]
 								xs:max-w-[115px]
-								xs:h-[58px]
+								xs:h-[58.39px]
 								xs:mb-[8px]
 								xs:px-[10px]
 								xs:pt-2
-
-
+								xs:rounded-[7.68335px]
 								"
 								style={{
 									border: "1px solid #000000",
@@ -920,26 +1188,29 @@ export function Faq() {
 								</p>
 							</div>
 							<div
-								className="w-full rounded-[20px]
+								className="rounded-[20px]
 								lg:max-w-[296px]
-								lg:h-[152px]
+								lg:h-[189px]
 								lg:px-[21px]
 								lg:pt-3
+								lg:rounded-[20px]
 								md:max-w-[296px]
-								md:h-[152px]
+								md:h-[189px]
 								md:px-[21px]
 								md:pt-3
+								md:rounded-[20px]
 								sm:max-w-[115px]
-								sm:h-[58px]
+								sm:h-[72.61px]
 								sm:mb-[8px]
 								sm:px-[10px]
 								sm:pt-2
+								sm:rounded-[7.68335px]
 								xs:max-w-[115px]
-								xs:h-[58px]
+								xs:h-[72.61px]
 								xs:mb-[8px]
 								xs:px-[10px]
 								xs:pt-2
-
+								xs:rounded-[7.68335px]
 
 								"
 								style={{
@@ -983,7 +1254,7 @@ export function Faq() {
 export function Bootcamp() {
 	return (
 		<div
-			className="flex items-center justify-between px-48 pt-40 pb-36
+			className="w-full flex items-center justify-between pt-40 pb-36
 			lg:flex-row
 			sm:flex-col-reverse
 			xs:flex-col-reverse
@@ -997,11 +1268,12 @@ export function Bootcamp() {
 				"
 				style={{
 					height: "100%",
-					maxHeight: 832,
+					//	maxHeight: 832,
+					width: "100%",
 				}}
 			>
 				<div
-					className="flex items-center justify-center max-w-full pb-48 lg:flex-row
+					className="flex items-center justify-center w-full pb-48 xl:mr-[-10px] lg:mr-[-10px] lg:flex-row
 		sm:flex-col-reverse
 		xs:flex-col-reverse
 		animate__fadeInRight
@@ -1019,14 +1291,13 @@ export function Bootcamp() {
 							paddingLeft: 22,
 							backgroundColor: "#CEFFE4",
 							borderRadius: 20,
-							width: "100%",
-							maxWidth: 225,
+							width: 240,
 							height: 225,
 							textAlign: "center",
 							//marginBottom: 203,
 						}}
 					>
-						<span style={headStyle}>Sustainability</span>
+						<p style={headStyle}>Sustainability</p>
 
 						<span style={paraStyle}>
 							Harnessing the power of IoT to manage Natural resources more
@@ -1035,12 +1306,11 @@ export function Bootcamp() {
 					</div>
 					<div
 						className="w-full
+						xl:max-w-[112px]
 						lg:max-w-[112px]
 						lg:h-6
-						
 						sm:h-8
 						sm:max-w-[22px]
-				
 						xs:h-8
 						xs:max-w-[22px]"
 						style={{
@@ -1049,7 +1319,7 @@ export function Bootcamp() {
 					></div>
 				</div>
 				<div
-					className="flex items-center justify-center max-w-full lg:flex-row
+					className="w-full flex items-center justify-center xl:mr-[-10px] lg:mr-[-10px] max-w-full lg:flex-row
 		sm:flex-col-reverse
 		xs:flex-col-reverse
 		animate__fadeInRight"
@@ -1067,7 +1337,7 @@ export function Bootcamp() {
 							backgroundColor: "#CEFFE4",
 							borderRadius: 20,
 							width: "100%",
-							maxWidth: 225,
+							maxWidth: 240,
 							height: 225,
 							textAlign: "center",
 						}}
@@ -1080,8 +1350,9 @@ export function Bootcamp() {
 						</span>
 					</div>
 					<div
-						className="w-full	
-						lg:max-w-[112px]
+						className="w-full
+						xl:max-w-[115px]	
+						lg:max-w-[115px]
 						lg:h-6
 						
 						sm:h-12
@@ -1109,11 +1380,9 @@ export function Bootcamp() {
 				xs:px-[17px]
 				xs:h-[192px]
 				xs:pt-[43px]
-
 				"
 				style={{
 					maxWidth: 462,
-					width: "100%",
 					//height: "100%",
 					background: "#CEFFE4",
 					borderRadius: 20,
@@ -1124,7 +1393,7 @@ export function Bootcamp() {
 					xl:text-[22px]
 					xl:pb-[81px]
 					lg:text-[22px]
-lg:pb-[81px]
+					lg:pb-[81px]
 					md:text-[22px]
 					md:pb-[81px]
 					sm:text-base
@@ -1141,7 +1410,7 @@ lg:pb-[81px]
 					accomplish a specific task or goal.
 				</p>
 				<span
-					className="	xl:flex
+					className="xl:flex
 					lg:flex
 					md:flex
 				xs:hidden
@@ -1172,15 +1441,55 @@ lg:pb-[81px]
 				</div>
 			</div>
 			<div
-				className="items-center justify-center animate__animated animate__fadeInLeft
+				className="w-full flexitems-center justify-center animate__animated animate__fadeInLeft
 			xs:hidden
 			sm:hidden
 			lg:flex
+			lg:ml-[-10px]
 			md:flex
 			animate__fadeInLeft
 			"
 			>
 				<div
+					className="flex items-center justify-center w-full pb-48 xl:mr-[-10px] lg:mr-[-10px] lg:flex-row
+		sm:flex-col-reverse
+		xs:flex-col-reverse
+		animate__fadeInRight
+		"
+				>
+					<div
+						className="w-[112px] h-6"
+						style={{
+							backgroundColor: "#CEFFE4",
+						}}
+					></div>
+					<div
+						style={{
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "center",
+							flexDirection: "column",
+							paddingTop: 51,
+							paddingBottom: 51,
+							paddingRight: 22,
+							paddingLeft: 22,
+							backgroundColor: "#CEFFE4",
+							borderRadius: 20,
+							width: 225,
+							height: 225,
+							textAlign: "center",
+							//marginBottom: 203,
+						}}
+					>
+						<p style={headStyle}>Sustainability</p>
+
+						<span style={paraStyle}>
+							Harnessing the power of IoT to manage Natural resources more
+							sustainbly
+						</span>
+					</div>
+				</div>
+				{/* <div
 					style={{
 						width: "100%",
 						maxWidth: "112px",
@@ -1212,7 +1521,7 @@ lg:pb-[81px]
 						Harnessing the power of IoT to manage Natural resources more
 						sustainbly
 					</span>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
@@ -1220,6 +1529,7 @@ lg:pb-[81px]
 export function Existance() {
 	return (
 		<div
+			id="About"
 			style={{
 				display: "flex",
 				alignItems: "center",
@@ -1234,8 +1544,8 @@ export function Existance() {
 				xs:flex-col  
 				xs:max-w-sm 
 				md:max-w-7xl 
-				xl:max-w-[1350px] 
-				lg:max-w-full
+				xl:max-w-[90%]
+				lg:max-w-[90%]
 				sm:items-center pl-10 pt-16 pb-6
 				sm:justify-evenly
 				xs:items-center xs:justify-between
@@ -1354,6 +1664,7 @@ export function Steps() {
 	];
 	return (
 		<div
+			id="How"
 			className="flex items-center justify-center flex-col w-full
 		lg:py-[181px]
 		md:py-[181px]
@@ -1470,7 +1781,7 @@ export function Steps() {
 }
 export function About() {
 	return (
-		<div className=" xs:pb-12 sm:pb-12">
+		<div id="Why" className=" xs:pb-12 sm:pb-12">
 			<div className="flex flex-col px-44 pb-16 w-full">
 				<div
 					style={{
@@ -1532,7 +1843,7 @@ export function About() {
 						}}
 					>
 						Free automated bootcamps that helps you stay motivated, deepen your
-						understanding & knowledge, and reach your career goals.{" "}
+						understanding & knowledge, and reach your career goals.
 					</span>
 				</div>
 				<div
@@ -1548,21 +1859,35 @@ export function About() {
 						xl:items-center
 						xl:justify-center
 						xl:pb-[149px]
+						xl:mr-[14px]
+						xl:mb-[21px]
 						lg:items-center
 						lg:justify-center
+						lg:mr-[14px]
 						lg:w-[560px]
 						lg:h-[391px] 
+						lg:mb-[21px]
 						lg:pt-[106px]
 						lg:pb-[149px]
 						lg:px-[138px]
 						xs:items-start
 						xs:justify-start
+						xs:mr-0
+						xs:mb-0
 						xs:w-[258px]
 						xs:h-[191px] 
 						xs:pt-[21px]
 						xs:pb[95px]
 						xs:px-[16px]
-
+						sm:items-start
+						sm:justify-start
+						sm:mr-0
+						sm:mb-0
+						sm:w-[258px]
+						sm:h-[191px] 
+						sm:pt-[21px]
+						sm:pb[95px]
+						sm:px-[16px]
 						"
 						style={{
 							background: "linear-gradient(0deg, #CEFFE5, #CEFFE5), #4CEE95",
@@ -1612,7 +1937,7 @@ export function About() {
 						xl:items-center
 						xl:justify-center
 						xl:pb-[149px]
-
+						xl:mb-[21px]
 						lg: items-center
 						lg:justify-center
 						lg:w-[560px]
@@ -1620,6 +1945,8 @@ export function About() {
 						lg:pt-[106px]
 						lg:pb-[149px]
 						lg:px-[138px]
+						lg:mb-[21px]
+
 						xs:items-start
 						
 						xs:justify-start
@@ -1685,7 +2012,8 @@ export function About() {
 				>
 					<div
 						className="sm:mb-2 xs:mb-2
-						lg:mr-1
+						xl:mr-[14px]
+						lg:mr-[14px]
 						sm:mr-0
 						"
 						style={{
@@ -1783,7 +2111,8 @@ export function About() {
 export function LandJob() {
 	return (
 		<div
-			className="w-full bg-black"
+			id="Testimonies"
+			className="w-full bg-[#041D18]"
 			//			style={{ backgroundColor: "#000000", width: "100%" }}
 		>
 			<div
@@ -1867,15 +2196,17 @@ export function LandJob() {
 				"
 			>
 				<div
-					className="flex justify-between h-full
+					className="flex justify-between items-center h-full
 				xl:flex-col
+				xl:mb-[8px]
 				lg:flex-col
+				lg:mb-[8px]
 				md:flex-col
 				sm:flex-row
 				xs:flex-row
 				"
 				>
-					<video
+					<div
 						className="flex w-full m-3
 					xl:max-w-[295px]
 					xl:h-[404px]
@@ -1888,48 +2219,166 @@ export function LandJob() {
 					xs:max-w-[184px]
 					xs:h-[251px]
 					"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
-					<video
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="	xl:flex
+							xl:flex-col
+							lg:flex
+							md:flex
+							sm:hidden
+							xs:hidden"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
+					<div
 						className="flex w-full m-3
-				xl:max-w-[295px]
-				xl:h-[404px]
-				lg:max-w-[295px]
-				lg:h-[404px]
-				md:max-w-[295px]
-				md:h-[404px]
-				sm:max-w-[184px]
-				sm:h-[251px]
-				xs:max-w-[184px]
-				xs:h-[251px]
-				"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="xl:flex
+							xl:flex-col
+							lg:flex
+							md:flex
+							sm:hidden
+							xs:hidden"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
 				</div>
 				<div
-					className="flex justify-between h-full
+					className="flex justify-between items-center h-full
 				xl:flex-col
+				xl:mb-[8px]
 				lg:flex-col
+				lg:mb-[8px]
 				md:flex-col
 				sm:flex-row
 				xs:flex-row
 				"
 				>
-					<video
+					<div
 						className="flex w-full m-3
 					xl:max-w-[295px]
 					xl:h-[404px]
@@ -1942,48 +2391,170 @@ export function LandJob() {
 					xs:max-w-[184px]
 					xs:h-[251px]
 					"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
-					<video
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+							xl:flex
+							xl:flex-col
+							lg:flex
+							md:flex
+							sm:hidden
+							xs:hidden
+							"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
+					<div
 						className="flex w-full m-3
-				xl:max-w-[295px]
-				xl:h-[404px]
-				lg:max-w-[295px]
-				lg:h-[404px]
-				md:max-w-[295px]
-				md:h-[404px]
-				sm:max-w-[184px]
-				sm:h-[251px]
-				xs:max-w-[184px]
-				xs:h-[251px]
-				"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+								xl:flex
+								xl:flex-col
+								lg:flex
+								md:flex
+								sm:hidden
+								xs:hidden
+								"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
 				</div>
 				<div
-					className="flex justify-between h-full
+					className="flex justify-between items-center h-full
 				xl:flex-col
+				xl:mb-[8px]
 				lg:flex-col
+				lg:mb-[8px]
 				md:flex-col
 				sm:flex-row
 				xs:flex-row
 				"
 				>
-					<video
+					<div
 						className="flex w-full m-3
 					xl:max-w-[295px]
 					xl:h-[404px]
@@ -1996,48 +2567,170 @@ export function LandJob() {
 					xs:max-w-[184px]
 					xs:h-[251px]
 					"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
-					<video
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+							xl:flex
+							xl:flex-col
+							lg:flex
+							md:flex
+							sm:hidden
+							xs:hidden
+							"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
+					<div
 						className="flex w-full m-3
-				xl:max-w-[295px]
-				xl:h-[404px]
-				lg:max-w-[295px]
-				lg:h-[404px]
-				md:max-w-[295px]
-				md:h-[404px]
-				sm:max-w-[184px]
-				sm:h-[251px]
-				xs:max-w-[184px]
-				xs:h-[251px]
-				"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+							xl:flex
+								xl:flex-col
+								lg:flex
+								md:flex
+								sm:hidden
+								xs:hidden
+								"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
 				</div>
 				<div
-					className="flex justify-between h-full
+					className="flex justify-between items-center h-full
 				xl:flex-col
+				xl:mb-[8px]
 				lg:flex-col
+				lg:mb-[8px]
 				md:flex-col
 				sm:flex-row
 				xs:flex-row
 				"
 				>
-					<video
+					<div
 						className="flex w-full m-3
 					xl:max-w-[295px]
 					xl:h-[404px]
@@ -2050,48 +2743,170 @@ export function LandJob() {
 					xs:max-w-[184px]
 					xs:h-[251px]
 					"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
-					<video
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+							xl:flex
+								xl:flex-col
+								lg:flex
+								md:flex
+								sm:hidden
+								xs:hidden
+								"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
+					<div
 						className="flex w-full m-3
-				xl:max-w-[295px]
-				xl:h-[404px]
-				lg:max-w-[295px]
-				lg:h-[404px]
-				md:max-w-[295px]
-				md:h-[404px]
-				sm:max-w-[184px]
-				sm:h-[251px]
-				xs:max-w-[184px]
-				xs:h-[251px]
-				"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+							xl:flex
+								xl:flex-col
+								lg:flex
+								md:flex
+								sm:hidden
+								xs:hidden
+								"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
 				</div>
 				<div
-					className="flex justify-between h-full
+					className="flex justify-between items-center h-full
 				xl:flex-col
+				xl:mb-[8px]
 				lg:flex-col
+				lg:mb-[8px]
 				md:flex-col
 				sm:flex-row
 				xs:flex-row
 				"
 				>
-					<video
+					<div
 						className="flex w-full m-3
 					xl:max-w-[295px]
 					xl:h-[404px]
@@ -2104,37 +2919,157 @@ export function LandJob() {
 					xs:max-w-[184px]
 					xs:h-[251px]
 					"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
-					<video
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+							xl:flex
+								xl:flex-col
+								lg:flex
+								md:flex
+								sm:hidden
+								xs:hidden
+								"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
+					<div
 						className="flex w-full m-3
-				xl:max-w-[295px]
-				xl:h-[404px]
-				lg:max-w-[295px]
-				lg:h-[404px]
-				md:max-w-[295px]
-				md:h-[404px]
-				sm:max-w-[184px]
-				sm:h-[251px]
-				xs:max-w-[184px]
-				xs:h-[251px]
-				"
-						style={{
-							objectFit: "cover",
-							borderRadius: 20,
-						}}
-						src={
-							"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-						}
-						controls
-					></video>
+					xl:max-w-[295px]
+					xl:h-[404px]
+					lg:max-w-[295px]
+					lg:h-[404px]
+					md:max-w-[295px]
+					md:h-[404px]
+					sm:max-w-[184px]
+					sm:h-[251px]
+					xs:max-w-[184px]
+					xs:h-[251px]
+					"
+						style={{ position: "relative" }}
+					>
+						<video
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover",
+								borderRadius: 20,
+							}}
+							src={
+								"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+							}
+							controls
+						></video>
+						<div
+							className="
+								xl:flex
+								xl:flex-col
+								lg:flex
+								md:flex
+								sm:hidden
+								xs:hidden
+								"
+							style={{
+								color: "red",
+								position: "absolute",
+								height: "100%",
+								width: "100%",
+								top: "70%",
+								left: 32,
+								bottom: 34.76,
+								//left: 0,
+							}}
+						>
+							<span
+								className="not-italic font-normal"
+								style={{
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//fontWeight: "lighter",
+									fontSize: "23.582px",
+									lineHeight: "28px",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Full Name
+							</span>
+							<span
+								className="not-italic font-extralight"
+								style={{
+									paddingTop: 5.9,
+									fontFamily: "Helvetica Neue",
+									//fontStyle: "normal",
+									//	fontWeight: "200",
+									fontSize: "14.4112px",
+									lineHeight: "124.9%",
+									display: "flex",
+									alignItems: "center",
+									letterSpacing: "0.025em",
+									color: "#FFFFFF",
+								}}
+							>
+								Product Manager @ Google
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -2142,7 +3077,7 @@ export function LandJob() {
 }
 const headStyle = {
 	fontSize: 20,
-	fontWeight: "700",
+	fontWeight: "500",
 	color: secondaryColor,
 	paddingBottom: 9,
 };
@@ -2154,25 +3089,26 @@ const paraStyle = {
 	//lineHeight: 21,
 	color: secondaryColor,
 };
-const midDiv = {
-	maxWidth: 462,
-	width: "100%",
-	height: 832,
-	//height: "100%",
-	background: "#CEFFE4",
-	borderRadius: 20,
-	paddingTop: 131,
-	paddingRight: 42,
-	paddingLeft: 42,
-	paddingBottom: 344,
-	alignItems: "center",
-	justifyContent: "space-between",
-	flexDirection: "column",
-	display: "flex",
-};
+// const midDiv = {
+// 	maxWidth: 462,
+// 	width: "100%",
+// 	height: 832,
+// 	//height: "100%",
+// 	background: "#CEFFE4",
+// 	borderRadius: 20,
+// 	paddingTop: 131,
+// 	paddingRight: 42,
+// 	paddingLeft: 42,
+// 	paddingBottom: 344,
+// 	alignItems: "center",
+// 	justifyContent: "space-between",
+// 	flexDirection: "column",
+// 	display: "flex",
+// };
 const midPara = {
 	fontFamily: "Aeonik TRIAL",
 	//font-style: 'normal'
+	lineHeight: "35px",
 
 	color: secondaryColor,
 };
@@ -2186,90 +3122,90 @@ const midHead = {
 
 	color: secondaryColor,
 };
-const bigCard = {
-	height: "484px",
+// const bigCard = {
+// 	height: "484px",
 
-	width: "100%",
-	maxWidth: "517px",
+// 	width: "100%",
+// 	maxWidth: "517px",
 
-	borderRadius: "20px",
-	paddingTop: 44,
-	paddingLeft: 56,
-	paddingRight: 30,
-	paddingBottom: 119,
-	border: "1px solid #000000",
-};
-const mediumCard = {
-	marginLeft: 25,
-	paddingLeft: 25,
-	paddingTop: 24,
-	paddingRight: 32.75,
-	width: "100%",
-	maxWidth: "364px",
-	height: "362px",
-	border: "1px solid #000000",
-	borderRadius: "20px",
-};
-const smallerCard = {
-	paddingTop: 14,
-	paddingLeft: 36,
-	paddingRight: 26,
-	// /paddingBottom: 55,
-	width: "100%",
-	maxWidth: "369px",
-	height: "224px",
-	border: "1px solid #000000",
-	borderRadius: "20px",
-};
-const extraSmaller = {
-	paddingTop: 10,
-	//paddingBottom: 22,
-	paddingLeft: 20,
-	paddingRight: 20,
-	width: "100%",
-	maxWidth: "177px",
-	height: "118px",
-	border: "1px solid #000000",
-	borderRadius: "20px",
-};
-const cardHeading = {
-	fontFamily: "Helvetica Neue",
-	fontStyle: "normal",
-	fontWeight: "500",
-	fontSize: 20,
-	color: "#004737",
-};
+// 	borderRadius: "20px",
+// 	paddingTop: 44,
+// 	paddingLeft: 56,
+// 	paddingRight: 30,
+// 	paddingBottom: 119,
+// 	border: "1px solid #000000",
+// };
+// const mediumCard = {
+// 	marginLeft: 25,
+// 	paddingLeft: 25,
+// 	paddingTop: 24,
+// 	paddingRight: 32.75,
+// 	width: "100%",
+// 	maxWidth: "364px",
+// 	height: "362px",
+// 	border: "1px solid #000000",
+// 	borderRadius: "20px",
+// };
+// const smallerCard = {
+// 	paddingTop: 14,
+// 	paddingLeft: 36,
+// 	paddingRight: 26,
+// 	// /paddingBottom: 55,
+// 	width: "100%",
+// 	maxWidth: "369px",
+// 	height: "224px",
+// 	border: "1px solid #000000",
+// 	borderRadius: "20px",
+// };
+// const extraSmaller = {
+// 	paddingTop: 10,
+// 	//paddingBottom: 22,
+// 	paddingLeft: 20,
+// 	paddingRight: 20,
+// 	width: "100%",
+// 	maxWidth: "177px",
+// 	height: "118px",
+// 	border: "1px solid #000000",
+// 	borderRadius: "20px",
+// };
+// const cardHeading = {
+// 	fontFamily: "Helvetica Neue",
+// 	fontStyle: "normal",
+// 	fontWeight: "500",
+// 	fontSize: 20,
+// 	color: "#004737",
+// };
 const cardBody = {
 	fontFamily: "Helvetica Neue",
 	color: "rgba(0, 71, 55, 0.6)",
 };
-const mildCard1 = {
-	paddingLeft: 21,
-	paddingRight: 21,
-	paddingTop: 12,
-	width: "100%",
-	maxWidth: "296px",
-	height: "152px",
-	border: "1px solid #000000",
-	borderRadius: "20px",
-	marginBottom: 21,
-};
+// const mildCard1 = {
+// 	paddingLeft: 21,
+// 	paddingRight: 21,
+// 	paddingTop: 12,
+// 	width: "100%",
+// 	maxWidth: "296px",
+// 	height: "152px",
+// 	border: "1px solid #000000",
+// 	borderRadius: "20px",
+// 	marginBottom: 21,
+// };
 
-const mildCard2 = {
-	paddingLeft: 21,
-	paddingRight: 21,
-	paddingTop: 12,
-	width: "100%",
-	maxWidth: "296px",
-	height: "189px",
-	border: "1px solid #000000",
-	borderRadius: "20px",
-};
-const bottomWhiteTexts = {
-	fontFamily: "Helvetica Neue",
-	fontStyle: "normal",
-	fontWeight: "400",
-	fontSize: "14px",
-	letterSpacing: "0.055em",
-	color: "#FFFAE9",
-};
+// const mildCard2 = {
+// 	paddingLeft: 21,
+// 	paddingRight: 21,
+// 	paddingTop: 12,
+// 	width: "100%",
+// 	maxWidth: "296px",
+// 	height: "189px",
+// 	border: "1px solid #000000",
+// 	borderRadius: "20px",
+// };
+// const bottomWhiteTexts = {
+// 	fontFamily: "Helvetica Neue",
+// 	fontStyle: "normal",
+// 	fontWeight: "400",
+// 	fontSize: "14px",
+// 	letterSpacing: "0.055em",
+// 	color: "#FFFAE9",
+// };

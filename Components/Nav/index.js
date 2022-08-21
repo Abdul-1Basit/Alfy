@@ -1,4 +1,4 @@
-import Logo from "../../Content/Images/logo.png";
+import Logo from "../../Content/Images/alfy.svg";
 import Image from "next/image";
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
@@ -7,30 +7,43 @@ export default function Nav() {
 	const navOptions = [
 		{
 			optionName: "Home",
+			actionName: "#Home",
 			navLink: "/",
 		},
 		{
 			optionName: "Bootcamps",
+			actionName: "#Bootcamps",
+
 			navLink: "/",
 		},
 		{
 			optionName: "About",
+			actionName: "#About",
+
 			navLink: "/",
 		},
 		{
 			optionName: "How It Works",
+			actionName: "#How",
+
 			navLink: "/",
 		},
 		{
 			optionName: "Why",
+			actionName: "#Why",
+
 			navLink: "/",
 		},
 		{
 			optionName: "Testimonies",
+			actionName: "#Testimonies",
+
 			navLink: "/",
 		},
 		{
 			optionName: "FAQ",
+			actionName: "#FAQ",
+
 			navLink: "/",
 		},
 	];
@@ -40,36 +53,45 @@ export default function Nav() {
 			className="flex items-center justify-between max-w-full py-5 fixed top-0 px-3"
 			style={{
 				backgroundColor: "rgba(255, 255, 255, 0.9)",
+				position: "fixed",
+				top: 0,
 				width: "100%",
+				zIndex: 9,
 			}}
 		>
 			<div className="sm:hidden xs:hidden md:flex lg:flex xl:flex"></div>
-			<Image className="sm:pl-5 md:pl-5	" src={Logo} alt="Website Logo" />
-			<div className="sm:hidden xs:hidden md:flex lg:flex xl:flex">
-				{navOptions.map((item, index) => {
-					return (
-						<button
-							key={index}
-							style={{
-								padding: 10,
-								fontSize: 14,
-								fontWeight: "bold",
-								lineHeight: "15.96px",
-								color: activeOption === index ? "#4CEE95" : "#004737",
-								backgroundColor: "transparent",
-							}}
-						>
-							{item.optionName}
-						</button>
-					);
-				})}
+			<div className="flex items-center justify-between flex-row">
+				<Image className="sm:pl-5 md:pl-5	" src={Logo} alt="Website Logo" />
+				<div className="sm:hidden xs:hidden md:flex lg:flex xl:flex pl-12">
+					{navOptions.map((item, index) => {
+						return (
+							<a
+								className="flex font-semibold transition delay-150 duration-300 ease-in-out"
+								key={index}
+								href={item.actionName ?? ""}
+								style={{
+									padding: 10,
+									fontSize: 14,
+									//	fontWeight: "400",
+									lineHeight: "15.96px",
+									color: activeOption === index ? "#4CEE95" : "#004737",
+									backgroundColor: "transparent",
+									textAlign: "left",
+								}}
+							>
+								{item.optionName}
+							</a>
+						);
+					})}
+				</div>
 			</div>
 			<div className="flex flex-row items-center">
 				<button
+					className="transition ease-in-out delay-150 font-medium bg-[#CEFFE5] hover:-translate-y-1 hover:scale-110 hover:bg-[#4CEE95] hover:font-normal duration-300"
 					style={{
 						// fontSize: 14,
-						fontWeight: "700",
-						backgroundColor: "#CEFFE5",
+						//fontWeight: "500",
+						//						backgroundColor: "#CEFFE5",
 						color: "#004737",
 						textAlign: "center",
 						fontSize: 12.7,
@@ -83,10 +105,11 @@ export default function Nav() {
 					Request Access
 				</button>
 				<button
+					className="transition ease-in-out delay-150 font-medium bg-[#4CEE95] hover:-translate-y-1 hover:scale-110 hover:bg-[#CEFFE5] hover:font-medium duration-300"
 					style={{
 						fontSize: 14,
-						fontWeight: "normal",
-						backgroundColor: "#4CEE95",
+						fontWeight: "400",
+						//backgroundColor: "#4CEE95",
 						color: "#004737",
 						textAlign: "center",
 						fontSize: 12.7,
