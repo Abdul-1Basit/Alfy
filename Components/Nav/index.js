@@ -48,6 +48,7 @@ export default function Nav() {
 		},
 	];
 	const [activeOption, setActiveOption] = React.useState(0);
+	const [showMenu, setShowMenu] = React.useState(false);
 	return (
 		<div
 			className="flex items-center justify-between max-w-full py-5 fixed top-0 px-3"
@@ -123,8 +124,53 @@ export default function Nav() {
 				</button>
 			</div>
 			<div className="sm:hidden xs:hidden md:flex lg:flex xl:flex"></div>
-			<div className="sm:flex xs:flex md:hidden lg:hidden xl:hidden flex p-5">
-				<AiOutlineMenu size={25} />
+			<div className="sm:flex xs:flex md:hidden lg:hidden xl:hidden flex p-5 dropdown-menu">
+				<AiOutlineMenu
+					size={25}
+					class="menu-btn"
+					onClick={() => {
+						setShowMenu(!showMenu);
+					}}
+				/>
+			</div>
+			<div
+				class="menu-content"
+				style={{
+					display: showMenu ? "flex" : "none",
+					flexDirection: "column",
+					position: "absolute",
+					backgroundColor: "rgba(255, 255, 255, 0.9)",
+					right: 0,
+					top: 20,
+					minWidth: "160px",
+					zIndex: 1,
+					borderRadius: 4,
+					paddingLeft: 10,
+				}}
+			>
+				{navOptions.map((item, index) => {
+					return (
+						<a
+							className="flex font-semibold transition delay-150 duration-300 ease-in-out"
+							key={index}
+							href={item.actionName ?? ""}
+							onClick={() => {
+								setShowMenu(false);
+							}}
+							style={{
+								padding: 10,
+								fontSize: 14,
+								//	fontWeight: "400",
+								lineHeight: "15.96px",
+								color: activeOption === index ? "#4CEE95" : "#004737",
+								backgroundColor: "transparent",
+								textAlign: "left",
+							}}
+						>
+							{item.optionName}
+						</a>
+					);
+				})}
 			</div>
 		</div>
 	);
