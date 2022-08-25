@@ -141,11 +141,12 @@ export default function About() {
 							lg:text-[22px]
 							lg:text-center
                             lg:leading-[26.25px]
-							xs:text-[7.82px]
+							md:text-[9px]
+							xs:text-[9px]
 							xs:text-left
                             xs:leading-[9.33px]
                             sm:leading-[9.33px]
-							sm:text-[7.82px]
+							sm:text-[9px]
 							sm:text-left
 							"
 							style={{
@@ -216,12 +217,12 @@ export default function About() {
 							lg:text-[22px]
 							lg:text-center
                             lg:leading-[26.25px]
-
-							xs:text-[7px]
+md:text-[9px]
+							xs:text-[9px]
 							xs:text-left
                             xs:leading-[7.82ppx]
 
-							sm:text-[7px]
+							sm:text-[9px]
 							sm:text-left
                             sm:leading-[7.82ppx]
 
@@ -329,11 +330,12 @@ export default function About() {
 							lg:text-[22px]
 							lg:text-center
                             lg:leading-[26.25px]
-							xs:text-[7.82px]
+							md:text-[9px]
+							xs:text-[9px]
 							xs:text-left
                             xs:leading-[9.33px]
                             sm:leading-[9.33px]
-							sm:text-[7.82px]
+							sm:text-[9px]
 							sm:text-left
 							"
 						>
@@ -404,11 +406,12 @@ export default function About() {
 							lg:text-[22px]
 							lg:text-center
                             lg:leading-[26.25px]
-							xs:text-[7.82px]
+							md:text-[9px]
+							xs:text-[9px]
 							xs:text-left
                             xs:leading-[9.33px]
                             sm:leading-[9.33px]
-							sm:text-[7.82px]
+							sm:text-[9px]
 							sm:text-left
 							"
 						>

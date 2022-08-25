@@ -3,7 +3,7 @@ export default function Existance() {
 		<div id="About" className="flex items-center justify-center w-full">
 			<div
 				className="w-full flex items-start justify-evenly rounded-[20px]
-				xl:max-w-full
+				xl:max-w-[2000px]
 				xl:flex-row
 				xl:mx-[56px]
 				xl:px-44
@@ -11,7 +11,7 @@ export default function Existance() {
 				xl:h-full
 				xl:max-h-[675px]
 				lg:mx-[56px]
-				lg:max-w-full
+				lg:max-w-[2000px]
 				lg:flex-row
 				lg:px-44
 				lg:py-24
@@ -22,8 +22,6 @@ export default function Existance() {
 				md:flex-col  
 				md:max-w-sm 
 				md:max-h-[675px]
-
-
 				sm:max-w-sm 
 				sm:flex-col
 				sm:items-center pl-10 pt-16 pb-6

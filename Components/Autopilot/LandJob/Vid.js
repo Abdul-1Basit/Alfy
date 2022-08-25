@@ -1,18 +1,23 @@
+import React from "react";
+
 export default function (props) {
+	React.useEffect(() => {
+		console.log("width", window.screen.width);
+	}, []);
 	return (
 		<div
-			className="flex w-full m-3
-    xl:max-w-[350px]
-    xl:h-[404px]
-    lg:max-w-[295px]
-    lg:h-[404px]
-    md:max-w-[350px]
-    md:h-[404px]
-    sm:max-w-full
-    sm:h-[251px]
-    xs:max-w-[184px]
-    xs:h-[251px]
-    "
+			className="flex m-1
+			xl:h-[404px]
+			xl:max-w-[296px]
+			lg:h-[404px]
+			lg:max-w-[296px]
+			md:max-w-[184.82px]
+			md:h-[251.41px]
+			sm:max-w-[184.82px]
+			sm:h-[251.41px]
+			xs:max-w-[184.82px]
+			xs:h-[251.41px]
+			"
 			style={{ position: "relative" }}
 		>
 			<video
@@ -34,9 +39,9 @@ export default function (props) {
 			<div
 				className="
             xl:flex-col
-       xl:flex
+    	    xl:flex
             lg:flex-col
-    lg:flex
+    		lg:flex
             md:flex-col
             md:flex
             sm:hidden

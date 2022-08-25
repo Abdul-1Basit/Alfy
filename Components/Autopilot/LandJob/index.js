@@ -94,175 +94,22 @@ export default function LandJob({ videoUrls }) {
 				</span>
 			</div>
 
-			<div
-				className="flex item-center justify-between w-full px-3
-				xl:flex-row
-				lg:flex-row
-                md:flex-row
-				sm:flex-col
-				xs:flex-col
-				"
-			>
-				<div
-					className="flex justify-between items-center h-full w-full lg:m-1 xl:m-1 md:m-1 sm:m-0 xs:m-0
-				xl:flex-col
-				xl:mb-[8px]
-				lg:flex-col
-				lg:mb-[8px]
-				md:flex-col
-				sm:flex-row
-				xs:flex-row
-				"
-				>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[0]} />
-					</Suspense>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[1]} />
-					</Suspense>
-				</div>
-				<div
-					className="flex justify-between items-center h-full w-full lg:m-1 xl:m-1 md:m-1 sm:m-0 xs:m-0
-				xl:flex-col
-				xl:mb-[8px]
-				lg:flex-col
-				lg:mb-[8px]
-				md:flex-col
-				sm:flex-row
-				xs:flex-row
-				"
-				>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[2]} />
-					</Suspense>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[3]} />
-					</Suspense>
-				</div>
-				<div
-					className="flex justify-between items-center h-full w-full lg:m-1 xl:m-1 md:m-1 sm:m-0 xs:m-0
-				xl:flex-col
-				xl:mb-[8px]
-				lg:flex-col
-				lg:mb-[8px]
-				md:flex-col
-				sm:flex-row
-				xs:flex-row
-				"
-				>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[4]} />
-					</Suspense>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[5]} />
-					</Suspense>
-				</div>
-				<div
-					className="flex justify-between items-center h-full w-full lg:m-1 xl:m-1 md:m-1 sm:m-0 xs:m-0
-				xl:flex-col
-				xl:mb-[8px]
-				lg:flex-col
-				lg:mb-[8px]
-				md:flex-col
-				sm:flex-row
-				xs:flex-row
-				"
-				>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[6]} />
-					</Suspense>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[7]} />
-					</Suspense>
-				</div>
-				<div
-					className="flex justify-between items-center h-full w-full lg:m-1 xl:m-1 md:m-1 sm:m-0 xs:m-0
-				xl:flex-col
-				xl:mb-[8px]
-				lg:flex-col
-				lg:mb-[8px]
-				md:flex-col
-				sm:flex-row
-				xs:flex-row
-				"
-				>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[8]} />
-					</Suspense>
-					<Suspense
-						fallback={
-							<svg
-								className="animate-spin h-5 w-5 mr-3"
-								viewBox="0 0 24 24"
-							></svg>
-						}
-					>
-						<Vid videoUrl={videos[9]} />
-					</Suspense>
-				</div>
+			<div className="grid mb-2 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2">
+				{videos.map((item, index) => {
+					return (
+						<Suspense
+							key={index}
+							fallback={
+								<svg
+									className="animate-spin h-5 w-5 mr-3"
+									viewBox="0 0 24 24"
+								></svg>
+							}
+						>
+							<Vid videoUrl={item} />
+						</Suspense>
+					);
+				})}
 			</div>
 		</div>
 	);

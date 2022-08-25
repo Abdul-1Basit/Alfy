@@ -6,7 +6,7 @@ export default function HomeComponent() {
 			id="Home"
 		>
 			<span
-				className="font-normal text-center max-w-5xl w-full animate__animated animate__fadeInUp
+				className="font-normal text-center max-w-5xl w-full animate__animated animate__bounceInUp
 			xl:text-[88px]
 			lg:text-[88px]
 			md:text-[50px]
@@ -14,14 +14,14 @@ export default function HomeComponent() {
 			sm:text-[32px]
 			"
 				style={{
-					fontFamily: "Aeonik TRIAL",
+					fontFamily: "Helvetica Neue",
 					color: "#004737",
 				}}
 			>
 				Online learning is Borken.
 			</span>
 			<span
-				className="font-normal text-center max-w-5xl w-full animate__animated animate__fadeInUp
+				className="font-normal text-center max-w-5xl w-full animate__animated animate__bounceInUp
 			xl:text-[88px]
 			xl:mt-[-30px]
 			lg:text-[88px]
@@ -34,7 +34,7 @@ export default function HomeComponent() {
 			sm:mt-[-6px]
 			"
 				style={{
-					fontFamily: "Aeonik TRIAL",
+					fontFamily: "Helvetica Neue",
 					color: "#004737",
 				}}
 			>
@@ -54,7 +54,7 @@ export default function HomeComponent() {
 			xs:px-[22px]
 			"
 				style={{
-					fontFamily: "Work Sans",
+					fontFamily: "Helvetica Neue",
 					color: "rgba(0, 71, 55, 0.6)",
 					fontWeight: "400",
 					opacity: "60%",
